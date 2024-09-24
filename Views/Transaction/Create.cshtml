@@ -1,0 +1,22 @@
+﻿@model Transaction
+<div>
+    <form asp-action="Create" asp-controller="Transaction" method="post">
+        <div>
+            <label>Create Date</label>
+            <input asp-for="CreateDate" class="form-control">
+            <label>Category</label>
+            <select asp-for="CategoryId" class="form-control" required>
+                <option value="">-- Select --</option>
+                @foreach(var category in Model.Categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+            <label>Sum</label>
+            <input asp-for="Sum" class="form-control" required>
+            <label>Comment</label>
+            <input asp-for="Comment" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary mt-5">Save</button>
+    </form>
+</div>

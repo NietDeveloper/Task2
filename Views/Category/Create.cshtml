@@ -1,0 +1,15 @@
+﻿@model Category
+<div>
+    <form asp-action="Create" asp-controller="Category" method="post">
+        <div>
+            <label>Name</label>
+            <input asp-for="Name" class="form-control">
+            <label>Type</label>
+            <select asp-for="Type" class="form-control">
+                <option value="1">Income</option>
+                <option value="2">Outcome</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-5">Save</button>
+    </form>
+</div>
